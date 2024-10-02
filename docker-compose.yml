@@ -13,7 +13,7 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
     ports: ['${DB_PORT_LOCAL}:${DB_PORT_DOCKER}']
-    copy: dump.sql:/tmp/dump.sql
+    copy: ./dump.sql:/tmp/dump.sql
   app:
     depends_on:
       - postgres
